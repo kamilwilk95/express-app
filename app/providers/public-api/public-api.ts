@@ -2,12 +2,14 @@ import { PublicApiProvider } from "../public-api-provider.interface";
 import axios from 'axios';
 import { PublicApiDto } from "./public-api.dto";
 import { PublicApiMapper } from "./public-api.mapper";
+import { injectable } from "inversify";
 
 interface ApiResponse {
   count: number;
   entries: PublicApiDto[]
 }
 
+@injectable()
 export class PublicApi implements PublicApiProvider {
   private mapper = new PublicApiMapper();
 

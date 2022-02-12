@@ -3,6 +3,10 @@
     "module": "commonjs",
     "target": "es6",
     "rootDir": "./",
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "lib": ["es6", "dom"],
+    "types": ["reflect-metadata"],
   }
 }
