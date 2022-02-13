@@ -8,5 +8,6 @@
     "emitDecoratorMetadata": true,
     "lib": ["es6", "dom"],
     "types": ["reflect-metadata"],
+    "outDir": "build"
   }
 }

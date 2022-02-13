@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "npm run build && node build/server.js",
     "start:dev": "concurrently \"nodemon server.ts\" \"nodemon -x tsoa routes\"",
+    "start:debug": "concurrently \"nodemon --inspect server.ts\" \"nodemon -x tsoa routes\"",
     "lint": "eslint . --ext .ts",
     "build": "rimraf ./build && tsc"
   },
