@@ -1,0 +1,15 @@
+version: '3.7'
+
+services:
+    main:
+        build: .
+        volumes:
+            - .:/usr/src/app
+            - /main/node_modules
+        ports:
+            - ${PORT}:${PORT}
+        command: npm start
+        restart: on-failure
+        read_only: true
+        env_file:
+            - .env
