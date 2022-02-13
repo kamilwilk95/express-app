@@ -1,11 +1,12 @@
-import express from 'express';
-import {router} from './app/use-cases/find-public-api/find-public-api.http.controller'
+import express, {Express} from 'express'
+import { RegisterRoutes } from './generated/routes'
 
-export const app = express();
-const port = 3000;
+export function app(): Express {
+  const app = express()
+  app.use(express.json())
 
-app.use('', router)
+  RegisterRoutes(app)
+  return app
+}
 
-app.listen(port, () => {
-  console.log(`Timezones by location application is running on port ${port}.`);
-});
+export default app()

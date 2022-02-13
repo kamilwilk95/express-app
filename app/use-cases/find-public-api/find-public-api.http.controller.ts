@@ -1,9 +1,13 @@
-import { Request, Response, Router } from 'express';
+import 'reflect-metadata'
+import { provide } from 'inversify-binding-decorators';
+import { Get, Route } from 'tsoa';
 
-const findPublicApi = (req: Request, res: Response) => {
-  res.json({'test': 1})
+@Route('')
+@provide(FindPublicApiHttpController) //TODO: change to provideSingleton
+export class FindPublicApiHttpController {
+  @Get()
+  findPublicApi() {
+    return {'test': 1}
+  }
 }
 
-export const router = Router();
-
-router.get('', findPublicApi);

@@ -1,4 +1,5 @@
 import { PublicApiDto } from "./public-api.dto";
+import { Api } from '../public-api.model';
 
 export class PublicApiMapper {
   toModel(dto: PublicApiDto): Api {

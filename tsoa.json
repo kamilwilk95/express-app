@@ -1,0 +1,15 @@
+{
+  "entryFile": "server.ts",
+  "noImplicitAdditionalProperties": "throw-on-extras",
+  "controllerPathGlobs": ["app/**/*.controller.ts"],
+  "spec": {
+      "outputDirectory": "generated",
+      "specVersion": 3,
+      "version": "0.0.2",
+      "yaml": true
+  },
+  "routes": {
+      "routesDir": "generated",
+      "iocModule": "./app/ioc"
+  }
+}
