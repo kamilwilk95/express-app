@@ -1,5 +1,5 @@
 import { Api } from './public-api.model';
 
-export interface PublicApiProvider {
-  getData(): Promise<Api[]>;
+export abstract class PublicApiProvider {
+  abstract getData(name?: string, cors?: boolean): Promise<Api[]>;
 }

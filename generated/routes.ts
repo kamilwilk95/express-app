@@ -11,6 +11,18 @@ import * as express from 'express';
 // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
 
 const models: TsoaRoute.Models = {
+    "Api": {
+        "dataType": "refObject",
+        "properties": {
+            "title": {"dataType":"string","required":true},
+            "description": {"dataType":"string","required":true},
+            "link": {"dataType":"string","required":true},
+            "category": {"dataType":"string","required":true},
+            "cors": {"dataType":"boolean"},
+        },
+        "additionalProperties": false,
+    },
+    // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
 };
 const validationService = new ValidationService(models);
 
@@ -25,6 +37,8 @@ export function RegisterRoutes(app: express.Router) {
 
             async function FindPublicApiHttpController_findPublicApi(request: any, response: any, next: any) {
             const args = {
+                    name: {"in":"query","name":"name","dataType":"string"},
+                    cors: {"in":"query","name":"cors","dataType":"boolean"},
             };
 
             // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
