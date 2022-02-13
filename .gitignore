@@ -1,0 +1,9 @@
+.idea/*
+node_modules/*
+junit.xml
+yarn-error.log
+.env
+/dist
+/build
+.scannerwork
+*.http
