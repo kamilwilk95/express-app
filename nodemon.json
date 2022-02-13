@@ -2,5 +2,5 @@
     "watch": ["app"],
     "ext": ".ts",
     "ignore": [],
-    "exec": "ts-node ./server.ts"
+    "exec": "ts-node ./app.ts"
 }

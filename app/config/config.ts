@@ -23,6 +23,19 @@ export const config = convict({
         format: 'nat',
         env: 'PORT',
     },
+    redis: {
+        port: {
+            doc: 'Port in which redis wil run',
+            default: 6379,
+            format: 'nat',
+            env: 'REDIS_PORT',
+        },
+        host: {
+            doc: 'Host in which redis wil run',
+            default: 'redis',
+            env: 'REDIS_HOST',
+        }
+    }
 })
 
 config.validate({
