@@ -1,13 +1,15 @@
-import express, {Express} from 'express'
-import { RegisterRoutes } from './generated/routes'
-import './app/use-cases/find-public-api/find-public-api.http.controller';
+import dotenv from 'dotenv-flow'
+dotenv.config()
 
-export function app(): Express {
-  const app = express()
-  app.use(express.json())
+import { config } from './app/config/config'
+import express from 'express'
+import { publicApiRouter } from './app/use-cases/find-public-api/find-public-api.http.controller'
 
-  RegisterRoutes(app)
-  return app
-}
+export const app = express()
+app.use(express.json())
+app.use(publicApiRouter);
 
-export default app()
+const port = config.get('port');
+app.listen(port, function () {
+    console.log(`API listening on port ${port}!`)
+})
